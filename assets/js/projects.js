@@ -50,7 +50,7 @@
       withRoot(p.image) +
       '" alt="' +
       p.title +
-      '" width="1200" height="750" loading="lazy"></div>' +
+      '" width="1200" height="750" loading="lazy" decoding="async"></div>' +
       '<div class="card-body">' +
       '<p class="label">' +
       (p.year || "") +

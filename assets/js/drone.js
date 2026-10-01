@@ -117,7 +117,9 @@
       return;
     }
     if (empty) empty.hidden = true;
-    tbody.innerHTML = list
+    var frag = document.createDocumentFragment();
+    var wrap = document.createElement("tbody");
+    wrap.innerHTML = list
       .map(function (f) {
         return (
           "<tr>" +
@@ -134,6 +136,9 @@
         );
       })
       .join("");
+    while (wrap.firstChild) frag.appendChild(wrap.firstChild);
+    tbody.innerHTML = "";
+    tbody.appendChild(frag);
   }
 
   var yearSel = document.querySelector("[data-year-filter]");

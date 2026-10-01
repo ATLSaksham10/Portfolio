@@ -97,7 +97,7 @@ h4 {
   color: var(--text-strong);
   letter-spacing: -0.03em;
   line-height: 1.12;
-  font-weight: 600;
+  font-weight: 700;
   margin: 0 0 0.6em;
 }
 
@@ -202,7 +202,8 @@ body:not([data-page="home"]):not([data-page="project"]) .page-main {
 }
 
 /* Progressive enhancement: hide reveal targets only after GSAP is confirmed */
-.js-anim [data-reveal] {
+.js-anim [data-reveal],
+.js-anim [data-reveal-stagger] > * {
   opacity: 0;
 }
 
@@ -219,5 +220,20 @@ body.is-nav-open {
 @media (max-width: 767px) {
   .wrap {
     width: min(var(--max), calc(100% - 1.5rem));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-visual,
+  .project-header-media {
+    will-change: auto;
+  }
+
+  .site-header,
+  .btn,
+  .btn-solid,
+  .card,
+  .socials a {
+    transition: none;
   }
 }

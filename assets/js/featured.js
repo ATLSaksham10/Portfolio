@@ -61,7 +61,7 @@
           withRoot(it.thumb) +
           '" alt="' +
           it.title +
-          '" width="1200" height="750" loading="lazy">' +
+          '" width="1200" height="750" loading="lazy" decoding="async">' +
           play +
           "</div>" +
           '<div class="card-body">' +

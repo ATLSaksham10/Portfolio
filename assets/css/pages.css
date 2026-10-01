@@ -18,6 +18,7 @@
   background-size: cover;
   background-position: center;
   transform-origin: center;
+  will-change: transform;
 }
 
 .hero-content {
@@ -110,6 +111,7 @@
   position: absolute;
   inset: -8% 0;
   background: var(--bg-elev-2) center / cover no-repeat;
+  will-change: transform;
 }
 
 .project-header-media img {
