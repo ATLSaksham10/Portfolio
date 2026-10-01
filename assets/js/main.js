@@ -1,4 +1,15 @@
 (function () {
+  /* ------------------------------------------------------------------
+     SCROLL TUNING: change these to adjust feel without hunting through code
+     ------------------------------------------------------------------ */
+  var USE_LENIS = false;          // false = native browser scroll (fastest, keeps trackpad momentum)
+                                  // true  = Lenis smooth scroll (adds lag on trackpads; only helps some mouse wheels)
+  var LENIS_WHEEL_MULTIPLIER = 2.5; // only used if USE_LENIS = true; higher = faster per wheel notch
+  var LENIS_LERP = 0.25;            // only used if USE_LENIS = true; higher = snappier
+  var HERO_PIN = true;            // false = hero scrolls away normally (smoothest, no pin)
+  var HERO_PIN_LENGTH = "+=40%";  // how long the hero stays pinned (shorter = faster)
+  var PROJECT_PARALLAX = true;    // false = project headers scroll normally
+
   var reduce =
     window.matchMedia &&
     window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -39,11 +50,13 @@
     });
   }
 
+  /* Lenis is OFF by default. Native scrolling keeps the OS's own momentum,
+     which is what lets one flick travel the whole page. */
   var lenis = null;
-  if (canAnimate && window.Lenis) {
+  if (USE_LENIS && canAnimate && window.Lenis) {
     lenis = new window.Lenis({
-      lerp: 0.2,
-      wheelMultiplier: 1.3,
+      lerp: LENIS_LERP,
+      wheelMultiplier: LENIS_WHEEL_MULTIPLIER,
       smoothWheel: true,
       syncTouch: false
     });
@@ -101,7 +114,11 @@
 
   document.documentElement.classList.add("js-anim");
   var gsap = window.gsap;
-  if (window.ScrollTrigger) gsap.registerPlugin(window.ScrollTrigger);
+  if (window.ScrollTrigger) {
+    gsap.registerPlugin(window.ScrollTrigger);
+    // Don't let ScrollTrigger recalculate when mobile browser bars show/hide (causes jumps)
+    window.ScrollTrigger.config({ ignoreMobileResize: true });
+  }
 
   function reveal() {
     gsap.utils.toArray("[data-reveal]").forEach(function (el) {
@@ -112,10 +129,10 @@
         {
           y: 0,
           opacity: 1,
-          duration: 0.45,
+          duration: 0.4,
           delay: delay,
           ease: "power2.out",
-          scrollTrigger: { trigger: el, start: "top 90%", once: true }
+          scrollTrigger: { trigger: el, start: "top 92%", once: true }
         }
       );
     });
@@ -123,17 +140,17 @@
     gsap.utils.toArray("[data-reveal-stagger]").forEach(function (parent) {
       var kids = parent.children;
       var n = kids.length;
-      var stagger = n > 1 ? Math.min(0.06, 0.4 / (n - 1)) : 0;
+      var stagger = n > 1 ? Math.min(0.05, 0.3 / (n - 1)) : 0;
       gsap.fromTo(
         kids,
         { y: 16, opacity: 0 },
         {
           y: 0,
           opacity: 1,
-          duration: 0.45,
+          duration: 0.4,
           stagger: stagger,
           ease: "power2.out",
-          scrollTrigger: { trigger: parent, start: "top 90%", once: true }
+          scrollTrigger: { trigger: parent, start: "top 92%", once: true }
         }
       );
     });
@@ -147,9 +164,9 @@
       var obj = { n: 0 };
       gsap.to(obj, {
         n: end,
-        duration: 0.9,
+        duration: 0.8,
         ease: "power2.out",
-        scrollTrigger: { trigger: el, start: "top 90%", once: true },
+        scrollTrigger: { trigger: el, start: "top 92%", once: true },
         onUpdate: function () {
           el.textContent = obj.n.toFixed(decimals) + suffix;
         }
@@ -167,7 +184,8 @@
     var indicator = hero.querySelector(".scroll-indicator");
     var mobile = window.matchMedia("(max-width: 767px)").matches;
 
-    if (mobile) {
+    // Mobile, or pin turned off: no pin, light fade as the hero scrolls away.
+    if (mobile || !HERO_PIN) {
       gsap.to([title, sub, actions].filter(Boolean), {
         y: -16,
         opacity: 0.35,
@@ -176,43 +194,49 @@
           trigger: hero,
           start: "top top",
           end: "bottom top",
-          scrub: 0.3
+          scrub: true
         }
       });
       return;
     }
 
     var tl = gsap.timeline({
+      defaults: { ease: "none", force3D: true },
       scrollTrigger: {
         trigger: hero,
         start: "top top",
-        end: "+=65%",
+        end: HERO_PIN_LENGTH,
         pin: true,
-        scrub: 0.3
+        pinSpacing: true,
+        anticipatePin: 1,
+        scrub: true
       }
     });
-    if (visual) tl.fromTo(visual, { scale: 1, opacity: 1 }, { scale: 1.15, opacity: 0.25 }, 0);
-    if (title) tl.to(title, { y: -80, opacity: 0 }, 0);
-    if (sub) tl.to(sub, { opacity: 0, y: -40 }, 0.12);
-    if (actions) tl.to(actions, { opacity: 0, y: -24 }, 0.18);
+    // Opacity + translate only on text; scale only on the visual (all GPU-friendly)
+    if (visual) tl.fromTo(visual, { scale: 1, opacity: 1 }, { scale: 1.1, opacity: 0.3 }, 0);
+    if (title) tl.to(title, { y: -60, opacity: 0 }, 0);
+    if (sub) tl.to(sub, { opacity: 0, y: -30 }, 0.1);
+    if (actions) tl.to(actions, { opacity: 0, y: -20 }, 0.15);
     if (indicator) tl.to(indicator, { opacity: 0 }, 0);
   }
 
   function projectHeader() {
+    if (!PROJECT_PARALLAX) return;
     var head = document.querySelector("[data-project-header]");
     if (!head || !window.ScrollTrigger) return;
     var media = head.querySelector(".project-header-media");
     var content = head.querySelector(".project-header-content");
     if (media) {
+      // Scale removed: scaling a large image every frame is a common source of lag.
       gsap.to(media, {
-        yPercent: 12,
-        scale: 1.08,
+        yPercent: 10,
         ease: "none",
+        force3D: true,
         scrollTrigger: {
           trigger: head,
           start: "top top",
           end: "bottom top",
-          scrub: 0.3
+          scrub: true
         }
       });
     }
@@ -221,11 +245,12 @@
         opacity: 0.15,
         y: -30,
         ease: "none",
+        force3D: true,
         scrollTrigger: {
           trigger: head,
           start: "top top",
           end: "bottom top",
-          scrub: 0.3
+          scrub: true
         }
       });
     }
@@ -252,6 +277,7 @@
       window.ScrollTrigger.create({
         trigger: item,
         start: "top 75%",
+        once: true,
         onEnter: function () {
           item.classList.add("is-active");
         }
