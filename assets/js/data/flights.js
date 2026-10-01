@@ -1,5 +1,5 @@
 window.DRONE = {
-  defaults: { pilot: "Saksham", drone: "TODO: drone model" },
+  defaults: { pilot: "Saksham Garg", drone: "TODO: drone model" },
   flights: []
 };
 

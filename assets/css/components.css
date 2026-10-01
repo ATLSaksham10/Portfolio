@@ -48,6 +48,56 @@
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--muted);
+  white-space: nowrap;
+}
+
+.wordmark-name {
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.card-soon {
+  border-style: dashed;
+}
+
+.card-soon:hover {
+  transform: none;
+  border-color: var(--line);
+  box-shadow: none;
+}
+
+.card-soon-media {
+  display: grid;
+  place-items: center;
+}
+
+.stats-row--2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.stats-row--3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.video-embed {
+  aspect-ratio: 16 / 9;
+  margin: 1.5rem 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--bg-elev);
+}
+
+.video-embed iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+@media (max-width: 420px) {
+  .wordmark-tag {
+    display: none;
+  }
 }
 
 .nav-desktop {

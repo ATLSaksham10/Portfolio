@@ -22,6 +22,16 @@
           );
         })
         .join(" ");
+      var tags = (r.tags || [])
+        .map(function (t) {
+          return '<span class="tag">' + t + "</span>";
+        })
+        .join("");
+      var details = (r.details || [])
+        .map(function (d) {
+          return '<p class="label" style="margin-top:1rem">' + d.label + "</p><p>" + d.text + "</p>";
+        })
+        .join("");
       var absId = "abs-" + i;
       var chipClass = r.status === "Published" ? "chip-ok" : "chip-muted";
       return (
@@ -46,17 +56,21 @@
         '<p class="label">Topic</p><p>' +
         r.topic +
         "</p>" +
+        (tags ? '<div class="tag-row" style="margin-top:0.7rem">' + tags + "</div>" : "") +
         '<button class="abstract-btn" type="button" aria-expanded="false" aria-controls="' +
         absId +
-        '">Abstract</button>' +
+        '">' +
+        (details ? "Abstract and details" : "Abstract") +
+        "</button>" +
         '<div id="' +
         absId +
         '" hidden><p style="margin-top:0.7rem">' +
         r.abstract +
-        "</p></div>" +
-        '<div class="tag-row" style="margin-top:1rem">' +
-        links +
-        "</div></article>"
+        "</p>" +
+        details +
+        "</div>" +
+        (links ? '<div class="tag-row" style="margin-top:1rem">' + links + "</div>" : "") +
+        "</article>"
       );
     })
     .join("");

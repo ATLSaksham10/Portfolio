@@ -1,55 +1,49 @@
+// Order = display order on the Projects page (most important first).
+// comingSoon: true renders a non-clickable placeholder card and is not counted in home stats.
 window.PROJECTS = [
   {
-    slug: "project-one",
-    title: "TODO: Project One",
-    year: "TODO",
-    tags: ["CFD", "Research"],
-    blurb: "TODO: one sentence",
+    slug: "caterpillar-wire-feed",
+    title: "Caterpillar wire feed improvement",
+    year: "2026",
+    tags: ["CAD", "Creo", "Industry", "Robotics"],
+    blurb: "A three-part redesign of a production wire feed system, from friction research to Creo CAD, prototyping, and floor implementation.",
     image: "assets/img/placeholder.svg",
-    href: "projects/project-one.html"
+    href: "projects/caterpillar-wire-feed.html"
   },
   {
-    slug: "project-two",
-    title: "TODO: Project Two",
-    year: "TODO",
-    tags: ["Simulation", "UAS"],
-    blurb: "TODO: one sentence",
+    slug: "frc-2026-rebuilt-robot",
+    title: "REBUILT 2026 FRC robot",
+    year: "2026",
+    tags: ["CAD", "Onshape", "Robotics"],
+    blurb: "Custom fixed dual-shooter robot with auto-aim and path systems, built from intake, indexer, and shooter subsystems on a CAN-based drivetrain.",
     image: "assets/img/placeholder.svg",
-    href: "projects/project-two.html"
+    href: "projects/frc-2026-rebuilt-robot.html"
   },
   {
-    slug: "project-three",
-    title: "TODO: Project Three",
-    year: "TODO",
-    tags: ["CAD", "CFD"],
-    blurb: "TODO: one sentence",
+    slug: "sunroom-design",
+    title: "Sunroom design",
+    year: "2024",
+    tags: ["CAD", "Onshape"],
+    blurb: "A code-compliant sunroom, from building-code research to an Onshape model and county-approved scaled drawings.",
     image: "assets/img/placeholder.svg",
-    href: "#"
+    href: "projects/sunroom-design.html"
   },
   {
-    slug: "project-four",
-    title: "TODO: Project Four",
-    year: "TODO",
-    tags: ["Research"],
-    blurb: "TODO: one sentence",
+    slug: "tsa-drone-challenge",
+    title: "TSA Drone Challenge",
+    year: "2025–26",
+    tags: ["CAD", "CFD", "FEA", "Robotics", "Aerospace", "3D Printing"],
+    blurb: "A 5\" racing quad modified with a sponge-lined servo claw and dual FPV cameras. 1st at TSA states, top 10 at nationals.",
     image: "assets/img/placeholder.svg",
-    href: "#"
+    href: "projects/tsa-drone-challenge.html"
   },
   {
-    slug: "project-five",
-    title: "TODO: Project Five",
-    year: "TODO",
-    tags: ["UAS", "Hardware"],
-    blurb: "TODO: one sentence",
-    image: "assets/img/placeholder.svg",
-    href: "#"
-  },
-  {
-    slug: "project-six",
-    title: "TODO: Project Six",
-    year: "TODO",
-    tags: ["Simulation"],
-    blurb: "TODO: one sentence",
+    slug: "coming-soon",
+    comingSoon: true,
+    title: "Next project",
+    year: "Coming soon",
+    tags: [],
+    blurb: "Another write-up is on the way.",
     image: "assets/img/placeholder.svg",
     href: "#"
   }

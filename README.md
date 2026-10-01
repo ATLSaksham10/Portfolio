@@ -36,7 +36,7 @@ Email is stored as `{ user, domain }` and assembled in JavaScript (nav/footer an
 
 ### Home timeline
 
-Edit `assets/js/data/timeline.js`. Newest first. `href` is from the site root (`projects/project-one.html`). Use `#` if there is no page yet.
+Edit `assets/js/data/timeline.js`. Newest first. `href` is from the site root (`projects/sunroom-design.html`). Use `#` if there is no page yet.
 
 ### Projects grid
 

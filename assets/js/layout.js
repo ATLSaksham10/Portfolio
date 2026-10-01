@@ -74,7 +74,7 @@
       '<span class="wordmark-name">' +
       esc(site.name) +
       "</span>" +
-      '<span class="wordmark-tag">ENG</span></a>' +
+      '<span class="wordmark-tag">Engineering Portfolio</span></a>' +
       '<nav class="nav-desktop" aria-label="Primary">' +
       navAnchors() +
       resumeBtn +
@@ -100,7 +100,7 @@
       esc(window.withRoot("index.html")) +
       '"><span class="wordmark-name">' +
       esc(site.name) +
-      '</span><span class="wordmark-tag">ENG</span></a>' +
+      '</span><span class="wordmark-tag">Engineering Portfolio</span></a>' +
       '<p class="muted" style="margin-top:0.7rem;max-width:28rem">' +
       esc(site.tagline) +
       "</p></div>" +

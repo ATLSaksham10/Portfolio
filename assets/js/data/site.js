@@ -1,13 +1,13 @@
 window.SITE = {
-  name: "Saksham",
-  fullName: "TODO: Full Name",
-  tagline: "TODO: one-line tagline, e.g. Engineering, simulation, and aerial systems.",
+  name: "Saksham Garg",
+  fullName: "Saksham Garg",
+  tagline: "Designing, building, testing — one project at a time.",
   location: "Atlanta, GA",
-  email: { user: "TODO", domain: "example.com" },
+  email: { user: "sakshamvirgo08", domain: "gmail.com" },
   socials: {
-    instagram: "https://instagram.com/TODO",
-    linkedin: "https://linkedin.com/in/TODO",
-    github: "https://github.com/TODO"
+    instagram: "https://www.instagram.com/atlsaksham10/",
+    linkedin: "https://www.linkedin.com/in/saksham-garg-858a7132a/",
+    github: "https://github.com/ATLSaksham10"
   },
   nav: [
     { label: "Home", href: "index.html", page: "home" },
@@ -19,9 +19,13 @@ window.SITE = {
   ],
   resume: "assets/docs/resume.pdf",
   hobbies: [
-    { label: "TODO: Hobby one", note: "TODO: one-line note" },
-    { label: "TODO: Hobby two", note: "TODO: one-line note" },
-    { label: "TODO: Hobby three", note: "TODO: one-line note" }
+    { label: "Tennis", note: "Love to serve in the sun." },
+    { label: "3D printing", note: "I break more things than I fix." },
+    { label: "Flying drones", note: "The DJI ban is so annoying." }
   ],
-  tools: ["ANSYS", "SimScale", "TODO: CAD", "TODO: more"]
+  tools: [
+    "Creo Parametric", "Onshape", "ANSYS", "SimScale CFD / FEA", "HydroCAD", "HEC-RAS",
+    "Cura", "3D printing + calibration", "FlashCut CNC", "CNC plasma", "TIG / MIG / Stick welding",
+    "PCB soldering", "Power tools", "Woodworking", "Python", "Java", "Lua", "FAA Part 107"
+  ]
 };

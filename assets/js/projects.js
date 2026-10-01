@@ -41,6 +41,17 @@
   }
 
   function card(p) {
+    if (p.comingSoon) {
+      return (
+        '<div class="card card-soon" aria-label="' + p.title + ', coming soon">' +
+        '<div class="card-media card-soon-media"><span class="label">Coming soon</span></div>' +
+        '<div class="card-body">' +
+        '<p class="label">' + (p.year || "") + "</p>" +
+        "<h3>" + p.title + "</h3>" +
+        "<p>" + p.blurb + "</p>" +
+        "</div></div>"
+      );
+    }
     var href = withRoot(p.href);
     return (
       '<a class="card" href="' +
@@ -74,6 +85,7 @@
   function render(animate) {
     if (!grid) return;
     var list = projects.filter(function (p) {
+      if (p.comingSoon) return active === "all";
       return active === "all" || (p.tags || []).indexOf(active) !== -1;
     });
     if (animate) grid.classList.add("is-filtering");

@@ -8,7 +8,7 @@
 
   var nameEl = document.querySelector("[data-site-name]");
   var tagEl = document.querySelector("[data-site-tagline]");
-  if (nameEl) nameEl.textContent = site.name || "Saksham";
+  if (nameEl) nameEl.textContent = site.name || "Saksham Garg";
   if (tagEl) tagEl.textContent = site.tagline || "";
 
   var tools = document.querySelector("[data-tools]");
@@ -25,7 +25,9 @@
     return sum + (Number(f.minutes) || 0);
   }, 0);
   var hours = minutes / 60;
-  var projects = (window.PROJECTS || []).length;
+  var projects = (window.PROJECTS || []).filter(function (p) {
+    return !p.comingSoon;
+  }).length;
   var pubs = (window.RESEARCH || []).filter(function (r) {
     return r.status === "Published";
   }).length;
@@ -72,12 +74,12 @@
           "<p>" +
           item.summary +
           "</p>" +
-          '<div class="tag-row" style="margin:0.7rem 0 1rem">' +
-          tags +
-          "</div>" +
-          '<a class="btn" href="' +
-          href +
-          '">View project <span class="arrow" aria-hidden="true">→</span></a>' +
+          (tags ? '<div class="tag-row" style="margin:0.7rem 0 1rem">' + tags + "</div>" : "") +
+          (item.href
+            ? '<a class="btn" style="margin-top:0.7rem" href="' +
+              href +
+              '">View project <span class="arrow" aria-hidden="true">→</span></a>'
+            : "") +
           "</div></article>"
         );
       }).join("");

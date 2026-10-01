@@ -1,62 +1,29 @@
+// Roles only, newest first. href is optional (omit it for no "View project" button).
 window.TIMELINE = [
   {
-    id: "t1",
-    dateLabel: "TODO: 2025 – Present",
-    title: "TODO: Title",
-    org: "TODO: Org / team",
-    location: "TODO",
-    summary: "TODO: 1–2 sentences.",
-    tags: ["TODO"],
-    href: "projects/project-one.html"
+    id: "swagelok-intern",
+    dateLabel: "Aug 2026 – Present",
+    title: "Engineering Intern",
+    org: "Swagelok Georgia",
+    location: "Alpharetta, GA",
+    summary: "Leading special projects to increase the efficiency and quality of Swagelok products."
   },
   {
-    id: "t2",
-    dateLabel: "TODO: 2024 – 2025",
-    title: "TODO: Title",
-    org: "TODO: Org / team",
-    location: "TODO",
-    summary: "TODO: 1–2 sentences.",
-    tags: ["TODO", "CFD"],
-    href: "projects/project-two.html"
+    id: "frc-co-captain",
+    dateLabel: "Aug 2026 – Present",
+    title: "President and Co-Captain",
+    org: "Danes Robotics, FRC Team 11174",
+    location: "Denmark High School",
+    summary: "Organizing and leading a 50+ member team to build a competitive robot.",
+    href: "projects/frc-2026-rebuilt-robot.html"
   },
   {
-    id: "t3",
-    dateLabel: "TODO: 2024",
-    title: "TODO: Title",
-    org: "TODO: Org / team",
-    location: "TODO",
-    summary: "TODO: 1–2 sentences.",
-    tags: ["Research"],
-    href: "research.html"
-  },
-  {
-    id: "t4",
-    dateLabel: "TODO: 2023 – 2024",
-    title: "TODO: Title",
-    org: "TODO: Org / team",
-    location: "TODO",
-    summary: "TODO: 1–2 sentences.",
-    tags: ["TODO"],
-    href: "#"
-  },
-  {
-    id: "t5",
-    dateLabel: "TODO: 2023",
-    title: "TODO: Title",
-    org: "TODO: Org / team",
-    location: "TODO",
-    summary: "TODO: 1–2 sentences.",
-    tags: ["TODO"],
-    href: "#"
-  },
-  {
-    id: "t6",
-    dateLabel: "TODO: 2022",
-    title: "TODO: Title",
-    org: "TODO: Org / team",
-    location: "TODO",
-    summary: "TODO: 1–2 sentences.",
-    tags: ["TODO"],
-    href: "#"
+    id: "caterpillar-intern",
+    dateLabel: "May 2026 – Aug 2026",
+    title: "Manufacturing Process Engineering Intern",
+    org: "Caterpillar",
+    location: "Alpharetta, GA",
+    summary: "Improved production floor process efficiency, and read and produced wire schematics and electrical blueprints for production.",
+    href: "projects/caterpillar-wire-feed.html"
   }
 ];
