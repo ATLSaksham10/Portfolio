@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About — Saksham</title>
+  <meta name="description" content="About Saksham, a high school engineer and researcher in Atlanta, GA.">
+  <meta property="og:title" content="About — Saksham">
+  <meta property="og:description" content="About Saksham, a high school engineer and researcher in Atlanta, GA.">
+  <meta property="og:image" content="assets/img/placeholder.svg">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2305070a'/%3E%3Ctext x='16' y='21' text-anchor='middle' font-family='ui-monospace' font-size='14' fill='%2300e5ff'%3ES%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body data-page="about" data-root="">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div id="site-nav"></div>
+  <main id="main" class="page-main">
+    <section class="section">
+      <div class="wrap intro-grid">
+        <div data-reveal>
+          <p class="eyebrow">Atlanta, GA</p>
+          <h1>About</h1>
+          <p>TODO: Short summary. High school engineer and researcher. Co-author of a published AIAA Journal paper on urban air mobility systems. FAA Part 107 remote pilot. Comfortable in ANSYS and SimScale.</p>
+          <p>TODO: Additional personal context without inventing school names, awards, or employers.</p>
+        </div>
+        <div class="portrait" data-reveal>
+          <img src="assets/img/placeholder.svg" alt="TODO: portrait of Saksham" width="640" height="800" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0">
+      <div class="wrap">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow">Photos</p>
+          <h2>In the lab / in the field</h2>
+        </div>
+        <div class="photo-grid">
+          <button type="button" data-photo>
+            <img src="assets/img/placeholder.svg" alt="TODO: lab or field photo 1" width="1200" height="750" loading="lazy">
+            <span class="cap">TODO: caption 1</span>
+          </button>
+          <button type="button" data-photo>
+            <img src="assets/img/placeholder.svg" alt="TODO: lab or field photo 2" width="1200" height="750" loading="lazy">
+            <span class="cap">TODO: caption 2</span>
+          </button>
+          <button type="button" data-photo>
+            <img src="assets/img/placeholder.svg" alt="TODO: lab or field photo 3" width="1200" height="750" loading="lazy">
+            <span class="cap">TODO: caption 3</span>
+          </button>
+          <button type="button" data-photo>
+            <img src="assets/img/placeholder.svg" alt="TODO: lab or field photo 4" width="1200" height="750" loading="lazy">
+            <span class="cap">TODO: caption 4</span>
+          </button>
+          <button type="button" data-photo>
+            <img src="assets/img/placeholder.svg" alt="TODO: lab or field photo 5" width="1200" height="750" loading="lazy">
+            <span class="cap">TODO: caption 5</span>
+          </button>
+          <button type="button" data-photo>
+            <img src="assets/img/placeholder.svg" alt="TODO: lab or field photo 6" width="1200" height="750" loading="lazy">
+            <span class="cap">TODO: caption 6</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow">Off the clock</p>
+          <h2>Hobbies</h2>
+        </div>
+        <div class="project-grid" data-hobbies></div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0">
+      <div class="wrap" data-reveal>
+        <p class="eyebrow">Skills</p>
+        <h2>Tools</h2>
+        <div class="tools-strip" data-about-tools></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap cta-band" data-reveal>
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2>Get in touch</h2>
+          <p><a data-email-link href="#">Email</a></p>
+          <div class="tag-row" style="margin-top:0.8rem">
+            <a class="btn" data-li href="https://example.com" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="btn" data-ig href="https://example.com" target="_blank" rel="noopener">Instagram</a>
+            <a class="btn" data-gh href="https://example.com" target="_blank" rel="noopener">GitHub</a>
+            <a class="btn-solid" data-resume href="#" target="_blank" rel="noopener">Resume <span class="arrow" aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="lightbox" data-lightbox hidden>
+      <button type="button" class="btn" data-lightbox-close>Close</button>
+      <img src="assets/img/placeholder.svg" alt="" width="1600" height="1000">
+    </div>
+  </main>
+  <div id="site-footer"></div>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script defer src="assets/js/data/site.js"></script>
+  <script defer src="assets/js/layout.js"></script>
+  <script defer src="assets/js/main.js"></script>
+  <script defer src="assets/js/about.js"></script>
+</body>
+</html>
