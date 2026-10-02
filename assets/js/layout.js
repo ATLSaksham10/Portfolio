@@ -6,6 +6,30 @@
   var root = body.getAttribute("data-root") || "";
   var page = body.getAttribute("data-page") || "";
 
+  /* Missing photos fail gracefully: gallery/figure/header photos are hidden,
+     everything else (cards, portrait, About grid) falls back to the placeholder. */
+  function imgFallback(img) {
+    if (!img || img.tagName !== "IMG" || img.getAttribute("data-fallback")) return;
+    img.setAttribute("data-fallback", "1");
+    var grid = img.closest(".gallery-grid");
+    if (grid || img.closest("figure") || img.closest(".project-header-media")) {
+      var holder = img.closest("figure") || img;
+      holder.remove();
+      if (grid && !grid.querySelector("img")) {
+        var sec = grid.closest("section");
+        if (sec) sec.hidden = true;
+      }
+      return;
+    }
+    img.src = root + "assets/img/placeholder.svg";
+  }
+  document.addEventListener("error", function (e) { imgFallback(e.target); }, true);
+  window.addEventListener("load", function () {
+    document.querySelectorAll("img").forEach(function (img) {
+      if (img.complete && img.naturalWidth === 0) imgFallback(img);
+    });
+  });
+
   window.withRoot = function (path) {
     if (!path) return "#";
     if (/^(https?:|mailto:|tel:|#|data:)/i.test(path)) return path;

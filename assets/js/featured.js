@@ -6,6 +6,13 @@
   var grid = document.querySelector("[data-featured-grid]");
   var filters = document.querySelector("[data-type-filters]");
 
+  var MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  function prettyDate(d) {
+    var m = String(d || "").match(/^(\d{4})-(\d{2})(?:-(\d{2}))?$/);
+    if (!m) return d || "";
+    return MONTHS[Number(m[2]) - 1] + (m[3] ? " " + Number(m[3]) + "," : "") + " " + m[1];
+  }
+
   function withRoot(path) {
     return window.withRoot ? window.withRoot(path) : path;
   }
@@ -68,7 +75,7 @@
           '<p class="label">' +
           it.outlet +
           " · " +
-          it.date +
+          prettyDate(it.date) +
           "</p>" +
           "<h3>" +
           it.title +

@@ -7,7 +7,7 @@ window.PROJECTS = [
     year: "2026",
     tags: ["CAD", "Creo", "Industry", "Robotics"],
     blurb: "A three-part redesign of a production wire feed system, from friction research to Creo CAD, prototyping, and floor implementation.",
-    image: "assets/img/placeholder.svg",
+    image: "photos/cat-hero.jpg",
     href: "projects/caterpillar-wire-feed.html"
   },
   {
@@ -16,7 +16,7 @@ window.PROJECTS = [
     year: "2026",
     tags: ["CAD", "Onshape", "Robotics"],
     blurb: "Custom fixed dual-shooter robot with auto-aim and path systems, built from intake, indexer, and shooter subsystems on a CAN-based drivetrain.",
-    image: "assets/img/placeholder.svg",
+    image: "photos/frc-hero.jpg",
     href: "projects/frc-2026-rebuilt-robot.html"
   },
   {
@@ -25,7 +25,7 @@ window.PROJECTS = [
     year: "2024",
     tags: ["CAD", "Onshape"],
     blurb: "A code-compliant sunroom, from building-code research to an Onshape model and county-approved scaled drawings.",
-    image: "assets/img/placeholder.svg",
+    image: "photos/sunroom-hero.jpg",
     href: "projects/sunroom-design.html"
   },
   {
@@ -34,7 +34,7 @@ window.PROJECTS = [
     year: "2025–26",
     tags: ["CAD", "CFD", "FEA", "Robotics", "Aerospace", "3D Printing"],
     blurb: "A 5\" racing quad modified with a sponge-lined servo claw and dual FPV cameras. 1st at TSA states, top 10 at nationals.",
-    image: "assets/img/placeholder.svg",
+    image: "photos/drone-hero.jpg",
     href: "projects/tsa-drone-challenge.html"
   },
   {

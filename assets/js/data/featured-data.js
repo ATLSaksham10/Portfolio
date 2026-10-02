@@ -1,47 +1,22 @@
+// Newest first on the page. date: "YYYY-MM-DD" (or "YYYY-MM" if the day is unknown).
+// type: video | article | press | talk | award
 window.FEATURED = [
   {
     type: "video",
-    title: "TODO: Video title",
-    outlet: "TODO: Outlet",
-    date: "TODO: 2025-06-01",
-    url: "https://example.com",
-    thumb: "assets/img/placeholder.svg",
-    blurb: "TODO: one-line blurb"
+    title: "Student profile video, Governor's Workforce Summit",
+    outlet: "GOSA, Governor's Workforce Summit",
+    date: "2026-09-22",
+    url: "https://f.io/e8PeVOk5",
+    thumb: "photos/featured-video.jpg",
+    blurb: "A short video profile of my engineering work, shown by GOSA at the Governor's Workforce Summit."
   },
   {
     type: "article",
-    title: "TODO: Article title",
-    outlet: "TODO: Outlet",
-    date: "TODO: 2025-04-12",
-    url: "https://example.com",
-    thumb: "assets/img/placeholder.svg",
-    blurb: "TODO: one-line blurb"
-  },
-  {
-    type: "press",
-    title: "TODO: Press mention",
-    outlet: "TODO: Outlet",
-    date: "TODO: 2024-11-20",
-    url: "https://example.com",
-    thumb: "assets/img/placeholder.svg",
-    blurb: "TODO: one-line blurb"
-  },
-  {
-    type: "talk",
-    title: "TODO: Talk title",
-    outlet: "TODO: Event",
-    date: "TODO: 2024-09-08",
-    url: "https://example.com",
-    thumb: "assets/img/placeholder.svg",
-    blurb: "TODO: one-line blurb"
-  },
-  {
-    type: "award",
-    title: "TODO: Award name",
-    outlet: "TODO: Organization",
-    date: "TODO: 2024-05-15",
-    url: "https://example.com",
-    thumb: "assets/img/placeholder.svg",
-    blurb: "TODO: one-line blurb"
+    title: "Empowering Excellence: A Guide to Building and Sustaining an AP Student Ambassador Program",
+    outlet: "College Board All Access",
+    date: "2025-08-21",
+    url: "https://allaccess.collegeboard.org/empowering-excellence-guide-building-and-sustaining-ap-student-ambassador-program",
+    thumb: "photos/featured-article.jpg",
+    blurb: "A College Board feature on Denmark High School's AP Ambassador program, which I'm a member of."
   }
 ];

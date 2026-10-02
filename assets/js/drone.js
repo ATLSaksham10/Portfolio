@@ -132,6 +132,7 @@
           td("Altitude (ft)", cell(f.altFt)) +
           td("LAANC", laancChip(f.laanc)) +
           td("Auth ID", cell(f.authId)) +
+          td("Notes", cell(f.notes)) +
           "</tr>"
         );
       })
